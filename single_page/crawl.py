@@ -15,10 +15,10 @@ class Bianti:
         header = {}
         header['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
         li = random.choice(eval(requests.get('http://localhost:5000/').text))
-        proxies = {"http": "http://"+li}
-        print(proxies)
-        the_html = requests.get(url,headers=header,proxies=proxies).text
-        # the_html = requests.get(url,headers=header).text
+        # proxies = {"http": "http://"+li}
+        # print(proxies)
+        # the_html = requests.get(url,headers=header,proxies=proxies).text
+        the_html = requests.get(url,headers=header).text
         response = html.fromstring(the_html)
         return response
     def parse(self, response):
