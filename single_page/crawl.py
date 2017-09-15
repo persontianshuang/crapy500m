@@ -4,7 +4,16 @@ from concurrent import futures
 import requests
 from lxml import html
 
-from mgdb import coll
+import pymongo
+MONGO_URI = '108.61.203.110'
+PORT = 29999
+def pymg(highest,collections,uri=MONGO_URI,port=PORT):
+    client = pymongo.MongoClient(uri,port)
+    zhihu = client[highest]
+    collections = zhihu[collections]
+    return collections
+
+coll = pymg('goods','915_no1')
 
 class Bianti:
     def __init__(self,asin):
