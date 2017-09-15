@@ -14,7 +14,11 @@ class Bianti:
     def make_req(self,url):
         header = {}
         header['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
-        li = random.choice(eval(requests.get('http://localhost:5000/').text))
+        # li = random.choice(eval(requests.get('http://localhost:5000/').text))
+
+        # li = requests.get('http://localhost:5000/get').text
+
+
         # proxies = {"http": "http://"+li}
         # print(proxies)
         # the_html = requests.get(url,headers=header,proxies=proxies).text
@@ -26,6 +30,7 @@ class Bianti:
         # img = img.strip().replace('data:image/jpeg;base64,','')
 
         title = response.xpath('//*[@id="productTitle"]/text()')[0].strip()
+        # print(title)
         try:
             try:
                 brand = response.xpath('//*[@id="brand"]/text()')[0].strip()
@@ -43,9 +48,14 @@ class Bianti:
         isbrand = True
         if brand.lower() not in title.lower():
             isbrand = False
+
+
+         # push
+
         return {'asin': self.asin,'title': title,'brand':brand,'price':price,'isbrand':isbrand}
 
     def single(self):
+        time.sleep(random.randint(1,10))
         return self.parse(self.make_req(self.url))
 
 
@@ -65,7 +75,7 @@ queue_len = int(RedisClient().queue_len)
 
 def download_many(cc_list):
     print('download_many')
-    workers = min(10, len(cc_list))
+    workers = min(20, len(cc_list))
     with futures.ThreadPoolExecutor(workers) as executor:
         executor.map(task.get_task, cc_list)
 

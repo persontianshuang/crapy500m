@@ -1,7 +1,7 @@
 
 from redisdb.db import RedisClient
 coll = RedisClient()
-path = "F:\采集\old\采集器\\todo\我\\30.txt"
+path = r"G:\T恤未采集1.txt"
 
 
 # raw
@@ -11,7 +11,7 @@ path = "F:\采集\old\采集器\\todo\我\\30.txt"
 
 # only asin
 with open(path,'r') as f:
-    tasks = [x.strip() for x in f.readlines()[1:]]
+    tasks = [x.strip() for x in f.readlines()]
 print(tasks)
 
 
