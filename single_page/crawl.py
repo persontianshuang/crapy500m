@@ -4,7 +4,7 @@ from concurrent import futures
 import requests
 from lxml import html
 
-from mongosdb.db import coll
+from mgdb import coll
 
 class Bianti:
     def __init__(self,asin):
