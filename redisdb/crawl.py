@@ -15,7 +15,7 @@ def pymg(highest,collections,uri=MONGO_URI,port=PORT):
     collections = zhihu[collections]
     return collections
 
-coll = pymg('goods','915_no1')
+coll = pymg('goods','918_no2')
 
 class Bianti:
     def __init__(self,asin):
@@ -69,13 +69,16 @@ class Bianti:
             except:
                 price = '0'
             isbrand = True
-            if brand.lower() not in title.lower():
-                isbrand = False
+            # if brand.lower() not in title.lower():
+            #     isbrand = False
 
 
-             # push
+            img = response.xpath('//div[contains(@id, "imgTagWrapperId")]//img/@data-a-dynamic-image')[0]
+            # img = re.sub(r'\.\_UX.+\_', '', list(eval(img).keys())[0])
+            img = list(eval(img).keys())[0]
 
-            return {'asin': self.asin,'title': title,'brand':brand,'price':price,'isbrand':isbrand}
+            return {'asin': self.asin,'title': title,'brand':brand,
+                    'price':price,'isbrand':isbrand,'img':img}
         else:
             return None
 
