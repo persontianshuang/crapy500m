@@ -11,7 +11,7 @@ def get_task(funcc):
     else:
         try:
             task = coll.rpop()
-            print(task)
+            # print(task)
             funcc(task)
 
         except:

@@ -83,7 +83,7 @@ class Bianti:
             return None
 
     def single(self):
-        time.sleep(random.randint(1,36))
+        time.sleep(random.randint(1,16))
         return self.parse(self.make_req(self.url))
 
 
@@ -113,4 +113,4 @@ def download_many(cc_list):
         executor.map(get_task, cc_list)
 
 
-download_many([single for x in range(queue_len)])
+[get_task(single) for x in range(10000)]
