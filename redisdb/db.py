@@ -1,6 +1,11 @@
 import redis
-from redisdb.setting import HOST, PORT, PASSWORD,COLL
-
+# from redisdb.setting import HOST, PORT, PASSWORD,COLL
+HOST = '45.32.173.22'
+# HOST = 'localhost'
+PORT = 6379
+# PASSWORD = None
+PASSWORD = 'helloredis'
+COLL = '915_no1'
 
 class RedisClient(object):
     def __init__(self, host=HOST, port=PORT,coll=COLL):
