@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e2cb2d2-e821-4bf6-8b0f-893fb21eba1b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/redisdb/db.py" afterPath="$PROJECT_DIR$/redisdb/db.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/redisdb/crawl.py" afterPath="$PROJECT_DIR$/redisdb/crawl.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +25,7 @@
     <SUITE FILE_PATH="coverage/crapy500m$1.coverage" NAME="1 Coverage Results" MODIFIED="1503737938679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/text" />
     <SUITE FILE_PATH="coverage/crapy500m$read_everyline.coverage" NAME="read_everyline Coverage Results" MODIFIED="1503736002038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/crapy500m$cs1.coverage" NAME="cs1 Coverage Results" MODIFIED="1505696836228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/redisdb" />
-    <SUITE FILE_PATH="coverage/crapy500m$crawl__1_.coverage" NAME="crawl (1) Coverage Results" MODIFIED="1505698192530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/redisdb" />
+    <SUITE FILE_PATH="coverage/crapy500m$crawl__1_.coverage" NAME="crawl (1) Coverage Results" MODIFIED="1505698943206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/redisdb" />
     <SUITE FILE_PATH="coverage/crapy500m$ip.coverage" NAME="ip Coverage Results" MODIFIED="1504484754867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/single_page" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -57,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crawl.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="crawl.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/redisdb/crawl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="95" column="21" lean-forward="false" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+            <state relative-caret-position="153">
+              <caret line="82" column="38" lean-forward="false" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -117,7 +117,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/redisdb/db.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
@@ -177,9 +177,9 @@
         <option value="$PROJECT_DIR$/redisdb/cs1.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/redisdb/__init__.py" />
-        <option value="$PROJECT_DIR$/redisdb/crawl.py" />
         <option value="$PROJECT_DIR$/redisdb/task.py" />
         <option value="$PROJECT_DIR$/redisdb/db.py" />
+        <option value="$PROJECT_DIR$/redisdb/crawl.py" />
       </list>
     </option>
   </component>
@@ -1051,14 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/redisdb/crawl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="95" column="21" lean-forward="false" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/redisdb/task.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1079,6 +1071,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redisdb/crawl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="82" column="38" lean-forward="false" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
           <folding />
         </state>
       </provider>
