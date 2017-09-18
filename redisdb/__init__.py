@@ -1,7 +1,7 @@
-import os
-
-import sys
-print(sys.path)
-base = os.path.dirname(os.path.abspath(__file__))
-# print(base)
-sys.path.insert(0,base)
+# import os
+#
+# import sys
+# print(sys.path)
+# base = os.path.dirname(os.path.abspath(__file__))
+# # print(base)
+# sys.path.insert(0,base)
