@@ -33,11 +33,11 @@ class Bianti:
 
         # the_html = requests.get(url,headers=header,proxies=proxies).text
 
-        proxies = {'http': 'socks5://127.0.0.1:1080',
-                   'https': 'socks5://127.0.0.1:1080'}
+        # proxies = {'http': 'socks5://127.0.0.1:1080',
+        #            'https': 'socks5://127.0.0.1:1080'}
         #
-        rg = requests.get(url,headers=header,proxies=proxies)
-        # rg = requests.get(url,headers=header)
+        # rg = requests.get(url,headers=header,proxies=proxies)
+        rg = requests.get(url,headers=header)
         if rg.status_code != 404:
             the_html = rg.text
             response = the_html
