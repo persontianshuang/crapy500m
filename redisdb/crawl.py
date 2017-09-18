@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import time,random
 from concurrent import futures
 
@@ -91,8 +93,8 @@ def single(asin):
         print(asin,':可能该商品已经不存在了')
     # time.sleep(random.randint(1,3))
 
-from redisdb import task
-from redisdb.db import RedisClient
+from task import get_task
+from db import RedisClient
 
 queue_len = int(RedisClient().queue_len)
 
@@ -103,7 +105,7 @@ def download_many(cc_list):
     print('download_many')
     workers = min(100, len(cc_list))
     with futures.ThreadPoolExecutor(workers) as executor:
-        executor.map(task.get_task, cc_list)
+        executor.map(get_task, cc_list)
 
 
 download_many([single for x in range(queue_len)])
