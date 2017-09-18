@@ -83,7 +83,7 @@ class Bianti:
             return None
 
     def single(self):
-        time.sleep(random.randint(1,56))
+        time.sleep(random.randint(1,36))
         return self.parse(self.make_req(self.url))
 
 
@@ -106,7 +106,7 @@ queue_len = int(RedisClient().queue_len)
 
 def download_many(cc_list):
     print('download_many')
-    workers = min(50, len(cc_list))
+    workers = min(30, len(cc_list))
     with futures.ThreadPoolExecutor(workers) as executor:
         executor.map(get_task, cc_list)
 
