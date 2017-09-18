@@ -1,5 +1,5 @@
 # 2.各个客户端取任务
-from redisdb.db import RedisClient
+from db import RedisClient
 
 def get_task(funcc):
     coll = RedisClient()
