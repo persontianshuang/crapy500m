@@ -6,6 +6,11 @@ from concurrent import futures
 import requests
 from lxml import html
 
+import gevent
+from gevent import monkey,pool
+monkey.patch_all()
+
+
 import pymongo
 MONGO_URI = '108.61.203.110'
 PORT = 29999
@@ -17,11 +22,15 @@ def pymg(highest,collections,uri=MONGO_URI,port=PORT):
 
 coll = pymg('goods','918_no2')
 
+
+
+links = []
+p = pool.Pool(20)
+
 class Bianti:
     def __init__(self,asin):
         self.asin = asin
         self.url = 'https://www.amazon.com/dp/' + self.asin
-
 
     def make_req(self,url):
         header = {}
@@ -86,15 +95,14 @@ class Bianti:
 
             return {'asin': self.asin,'title': title,'brand':brand,
                     'price':price,'isbrand':isbrand,'img':img}
+        else:
+            return None
 
     def single(self):
-        time.sleep(random.randint(1,16))
+        time.sleep(random.randint(1,26))
+        print(self.asin)
         return self.parse(self.make_req(self.url))
 
-
-data = Bianti('B0754QTJYS').single()
-if data!=None:
-    print(data)
 
 def single(asin):
     data = Bianti(asin).single()
@@ -105,32 +113,10 @@ def single(asin):
         print(asin,':可能该商品已经不存在了')
         # time.sleep(random.randint(1,3))
 
-# from task import get_task
-# from db import RedisClient
-#
-# r = RedisClient()
-#
-# queue_len = int(r.queue_len)
+from task import get_task
 
 
 
+jobs = [p.spawn(get_task, single) for x in range(10000)]
+gevent.joinall(jobs)
 
-# def download_many(cc_list):
-#     print('download_many')
-#     workers = min(30, len(cc_list))
-#     with futures.ThreadPoolExecutor(workers) as executor:
-#         executor.map(get_task, cc_list)
-
-
-# [get_task(single) for x in range(10000)]
-# B0755HH6NG
-# 323091
-# B074N42NXL
-# 323091
-# B01LFZVEFS
-# 323090
-# B01M6A8KHR
-# 323088
-# B0759DMF4K
-# 323085
-# B01KKW0ZXE
