@@ -90,6 +90,7 @@ class Bianti:
 
     def single(self):
         time.sleep(random.randint(1,16))
+        print(self.asin)
         return self.parse(self.make_req(self.url))
 
 

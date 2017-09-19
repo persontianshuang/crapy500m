@@ -22,6 +22,7 @@ class Bianti:
         self.asin = asin
         self.url = 'https://www.amazon.com/dp/' + self.asin
 
+
     def make_req(self,url):
         header = {}
         header['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
@@ -91,7 +92,7 @@ class Bianti:
         return self.parse(self.make_req(self.url))
 
 
-data = Bianti('B0755HH6NG').single()
+data = Bianti('B071YGYKYW').single()
 if data!=None:
     print(data)
 

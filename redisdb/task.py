@@ -5,13 +5,13 @@ def get_task(funcc):
     coll = RedisClient()
     task = 'None'
     r_len = coll.queue_len
-    print(r_len)
+    # print(r_len)
     if r_len==0:
         print('you have aready crawl all urls')
     else:
         try:
             task = coll.rpop()
-            print(task)
+            # print(task)
             funcc(task)
 
         except:
