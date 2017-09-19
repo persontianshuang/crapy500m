@@ -71,11 +71,17 @@ class Bianti:
             isbrand = True
             # if brand.lower() not in title.lower():
             #     isbrand = False
+            try:
+                try:
+                    img = response.xpath('//div[contains(@id, "imgTagWrapperId")]//img/@data-a-dynamic-image')[0]
+                    # img = re.sub(r'\.\_UX.+\_', '', list(eval(img).keys())[0])
+                    img = list(eval(img).keys())[0]
+                except:
+                    img = response.xpath('//div[contains(@id, "imgTagWrapperId")]//img/@src')[0]
+                    img = img.strip().replace('data:image/jpeg;base64,','')
+            except:
+                img = ''
 
-
-            img = response.xpath('//div[contains(@id, "imgTagWrapperId")]//img/@data-a-dynamic-image')[0]
-            # img = re.sub(r'\.\_UX.+\_', '', list(eval(img).keys())[0])
-            img = list(eval(img).keys())[0]
 
             return {'asin': self.asin,'title': title,'brand':brand,
                     'price':price,'isbrand':isbrand,'img':img}
@@ -114,3 +120,14 @@ def download_many(cc_list):
 
 
 [get_task(single) for x in range(10000)]
+# B0755HH6NG
+# 323091
+# B074N42NXL
+# 323091
+# B01LFZVEFS
+# 323090
+# B01M6A8KHR
+# 323088
+# B0759DMF4K
+# 323085
+# B01KKW0ZXE
