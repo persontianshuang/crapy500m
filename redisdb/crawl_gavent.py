@@ -20,7 +20,7 @@ def pymg(highest,collections,uri=MONGO_URI,port=PORT):
     collections = zhihu[collections]
     return collections
 
-coll = pymg('goods','921_no3')
+coll = pymg('goods','t_0925')
 
 
 
