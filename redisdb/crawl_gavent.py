@@ -25,7 +25,7 @@ coll = pymg('goods','1019')
 
 
 links = []
-p = pool.Pool(10)
+p = pool.Pool(5)
 
 class Bianti:
     def __init__(self,asin):
