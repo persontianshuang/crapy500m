@@ -25,7 +25,7 @@ coll = pymg('goods','1019')
 
 
 links = []
-p = pool.Pool(25)
+p = pool.Pool(20)
 
 class Bianti:
     def __init__(self,asin):
@@ -119,4 +119,5 @@ from task import get_task
 
 jobs = [p.spawn(get_task, single) for x in range(30000)]
 gevent.joinall(jobs)
+
 
