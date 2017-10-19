@@ -5,7 +5,7 @@ HOST = '45.32.173.22'
 PORT = 6379
 # PASSWORD = None
 PASSWORD = 'helloredis'
-COLL = 't_0925'
+COLL = '1019'
 
 class RedisClient(object):
     def __init__(self, host=HOST, port=PORT,coll=COLL):
