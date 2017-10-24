@@ -20,7 +20,7 @@ def pymg(highest,collections,uri=MONGO_URI,port=PORT):
     collections = zhihu[collections]
     return collections
 
-coll = pymg('goods','jieri')
+coll = pymg('goods','last24')
 
 links = []
 p = pool.Pool(12)
@@ -117,5 +117,6 @@ from task import get_task
 
 jobs = [p.spawn(get_task, single) for x in range(30000)]
 gevent.joinall(jobs)
+
 
 
