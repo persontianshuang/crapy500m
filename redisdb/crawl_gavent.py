@@ -20,10 +20,11 @@ def pymg(highest,collections,uri=MONGO_URI,port=PORT):
     collections = zhihu[collections]
     return collections
 
-coll = pymg('goods','last28')
+coll = pymg('goods','last29')
 
 links = []
 p = pool.Pool(12)
+
 
 class Bianti:
     def __init__(self,asin):
